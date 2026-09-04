@@ -170,6 +170,7 @@ class BluetoothRadarScanner:
 
             for line in output.splitlines():
                 line = line.strip()
+                print(line)
                 if not line or line.startswith("Inquiring"):
                     continue
                 parts = line.split()
