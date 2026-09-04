@@ -140,9 +140,13 @@ class BluetoothRadarScanner:
             devices.append((device, adv))
 
         scanner = BleakScanner(detection_callback=_callback)
+        print("Starting Scanner")
         await scanner.start()
         await asyncio.sleep(self.scan_duration)
+        print("Sleeping")
         await scanner.stop()
+        print("Scanner Stopped")
+        print(devices)
         return devices
 
     # ------------------------------------------------------------------
